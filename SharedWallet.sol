@@ -1,7 +1,8 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.1;
+pragma solidity ^0.8.1;
 
+//these imports work only on Remix, to use this contract locally please visit OpenZeppelin
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/contracts/utils/math/SafeMath.sol";
 

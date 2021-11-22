@@ -50,8 +50,14 @@ contract Lottery{
     
         winner = players[index]; // this is the winner
         
-        // transferring the entire contract's balance to the winner
-        winner.transfer(getBalance());
+        uint managerFee = (getBalance() * 10) / 100; // managerFee is 10%
+        uint winnerFee = (getBalance() * 90) / 100; // winnerFee is 90%
+        
+        // transferring the winnerFee to the winner
+        winner.transfer(winnerFee);
+        
+        // transferring the managerFee to the manager of the contract
+        payable(manager).transfer(managerFee);
         
         // resetting the lottery for the next round
         players = new address payable[](0);
